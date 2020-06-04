@@ -20,13 +20,16 @@ $(function() {
 });
 
 // Agregar nueva encuesta
+
 function agregarEncuesta() {
     // Obtener los valores de los inputs
+    // console.log("hola soy unsada")
     var id_usuario  = $("#hidden_id_usuario").val();
     var titulo      = $("#titulo").val();
     var descripcion = $("#descripcion").val();
     var fecha_final = $("#fecha_final").val();
     // Agregar encuesta con el método ajax POST
+
     $.post("ajax_encuesta/agregarEncuesta.php",
         {
             titulo      : titulo,

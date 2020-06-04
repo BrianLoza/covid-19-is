@@ -1,8 +1,8 @@
 <?php
 
-$servername = "localhost";
+$servername = "covid.local";
 $username = "root";
-$password = "";
+$password = "brian123";
 $dbname = "sistema_encuestasv1";
 
 // Creamos la conexión

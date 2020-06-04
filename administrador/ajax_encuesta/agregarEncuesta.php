@@ -1,5 +1,6 @@
 <?php
 
+
 if (isset($_POST['id_usuario']) && isset($_POST['titulo']) && isset($_POST['descripcion']) && isset($_POST['fecha_final'])) {
     // Incluir archivo de conexión a base de datos
     include("../../conexion.php");

@@ -1,4 +1,5 @@
 <?php 
+  
 
   date_default_timezone_set("America/Lima");
   $date = new DateTime();
@@ -96,7 +97,7 @@
   <script src="../js/jquery-3.3.1.min.js"></script>
   <script src="../js/popper.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
-  <script src="js/encuestas.js"></script>
+  <script src="js/encuestas.js"></script>  
 
 </body>
 </html>
@@ -136,7 +137,6 @@
               </div>
 
             </div>
-
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                 <button type="button" class="btn btn-primary" onclick="agregarEncuesta()">Agregar Encuesta</button>
@@ -195,3 +195,41 @@
         </div>
     </div>
 </div>
+
+<script>
+// Cargar modal de boostrap para agregar nueva encuesta
+// Usaremos el "shorter method"
+
+function agregarEncuesta () {
+  console.log("gato");
+
+  var id_usuario  = $("#hidden_id_usuario").val();
+    var titulo      = $("#titulo").val();
+    var descripcion = $("#descripcion").val();
+    var fecha_final = $("#fecha_final").val();
+    // Agregar encuesta con el método ajax POST
+
+    $.post("ajax_encuesta/agregarEncuesta.php",
+        {
+            titulo      : titulo,
+            descripcion : descripcion,
+            fecha_final : fecha_final,
+            id_usuario  : id_usuario
+        },
+        function (data, status) {
+            // Cerrar el modal
+            $("#modal_agregar").modal("hide");
+            // Mostrar las encuestas nuevamente
+            mostrarEncuestas();
+            // Limpiar campos del modal
+            $("#titulo").val("");
+            $("#descripcion").val("");
+            $("#fecha_final").val("");
+        }
+    );
+
+}
+
+
+
+</script>
