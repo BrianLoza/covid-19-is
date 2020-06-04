@@ -1,2 +1,0 @@
-# CovidWeb
- mio
